@@ -152,6 +152,8 @@ df.columns = ['date',
 'estacion'
 ]
 
+df = df.drop_duplicates() #Se eliminan los registros que puedan estar duplicados
+
 df['event'] =  range(0, df.shape[0])
 df['event'] = 'EVENTO-CLI-' + df['estacion'].astype(str) + '-' + fecha + '-' + df['event'].astype(str)
 
